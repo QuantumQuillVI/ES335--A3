@@ -154,11 +154,15 @@ def main():
 
     # Predict next words
     if st.button("Predict Next Words"):
-        # if starting_sequence:
+        if starting_sequence:
             generated_text = predict_next_words(starting_sequence, model, context_length, k)
             st.write("Generated Text:", generated_text)
-        # else:
-            # st.warning("Please enter a starting text sequence.")
+        else:
+            starting_sequence = ""
+            generated_text = predict_next_words(starting_sequence, model, context_length, k)
+            st.write("Generated Text:", generated_text)
+            
+            st.warning("Please enter a starting text sequence.")
 
 if __name__ == "__main__":
     main()
