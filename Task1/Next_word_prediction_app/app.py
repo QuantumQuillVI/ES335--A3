@@ -162,7 +162,7 @@ def main():
             generated_text = predict_next_words(starting_sequence, model, context_length, k)
             st.write("Generated Text:", generated_text)
             
-            st.warning("Please enter a starting text sequence.")
+            # st.warning("Please enter a starting text sequence.")
 
 if __name__ == "__main__":
     main()
